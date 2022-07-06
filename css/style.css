@@ -1,23 +1,24 @@
 :root {
   --main-text-color: #757575;
   --main-title-text-color: #212121;
-  --accent-text-color: #2196F3;
+  --accent-text-color: #2196f3;
   --adress-text-color: rgba(255, 255, 255, 0.6);
   --additional-text-color: #ffffff;
-  --hero-background-color: #2F303A;
+  --hero-background-color: #2f303a;
   --main-background-color: #ffffff;
-  --button-hover: #188CE8;
+  --button-hover: #188ce8;
   --header-logo-color: #000000;
-  --button-background: #F5F4FA;
-  --header-border: #ECECEC;
-  --icon-color: #AFB1B8;
-  
+  --button-background: #f5f4fa;
+  --header-border: #ececec;
+  --icon-color: #afb1b8;
+  --time-animation: 250ms;
+  --time-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
   color: var(--main-text-color);
   background-color: var(--main-background-color);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 14px;
   letter-spacing: 0.03em;
@@ -25,20 +26,18 @@ body {
 a {
   text-decoration: none;
 }
- li {
-  list-style-type: none; 
+li {
+  list-style-type: none;
 }
 .container {
   width: 1200px;
   padding: 0 15px;
   margin-left: auto;
-  margin-right: auto;  
-  /* outline: 1px solid forestgreen;
-  background: red; */
+  margin-right: auto;
 }
 section + section {
-    padding-top: 94px;
-    padding-bottom: 94px;
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 /* Стили хедера */
 header {
@@ -50,12 +49,12 @@ header {
 }
 .logo {
   color: var(--accent-text-color);
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
 }
-.header >.logo {
+.header > .logo {
   margin-right: 93px;
 }
 .header-logo {
@@ -63,10 +62,10 @@ header {
 }
 .main-nav,
 .nav-address {
-    display: flex;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;    
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
 }
 .nav-address {
   margin-left: auto;
@@ -80,16 +79,17 @@ header {
   margin-right: 0;
 }
 .main-nav a {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--main-title-text-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  }
-.main-nav .activity{
+}
+.main-nav .activity {
   color: var(--accent-text-color);
 }
 .main-nav a:hover,
@@ -100,122 +100,143 @@ header {
 .footer-address a:hover {
   color: var(--accent-text-color);
 }
+.main-nav a,
+.nav-address a,
+.footer-address a {
+  transition: color var(--time-animation) var(--time-function);
+}
 .nav-address-icon {
   margin-right: 10px;
+
   fill: currentColor;
+
+  transition: fill var(--time-animation) var(--time-function);
 }
 .nav-address-icon:hover,
 .nav-address-icon:focus {
   fill: var(--accent-text-color);
 }
-/* .icon-envelope:hover::before,
-.icon-envelope:focus::before {
-  background-color: var(--accent-text-color);
-} */
 .nav-address a {
+  display: flex;
+  align-items: center;
+
   color: var(--main-text-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  display: flex;
-  align-items: center;
 }
 /* Стили Студии */
 
 .hero {
+  text-align: center;
   background-color: var(--hero-background-color);
   color: var(--additional-text-color);
-  text-align: center;
- }
+}
 .background {
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/Bg-image-main.jpg);
   height: 600px;
   max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 200px;
   padding-bottom: 200px;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/Bg-image-main.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  margin-right: auto;
-  margin-left: auto;
 }
 .hero h1 {
+  margin-top: 0;
+  margin-bottom: 30px;
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-top: 0;
-  margin-bottom: 30px;
 }
 .order {
+  height: 50px;
+  padding: 10px 32px;
+
+  border: 1px solid var(--accent-text-color);
+  border-radius: 4px;
+
+  cursor: pointer;
+
   color: var(--additional-text-color);
   background-color: var(--accent-text-color);
-  cursor: pointer;
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
-  padding: 10px 32px;
-  box-shadow: 0px 4px 4px 0px #00000026;
-  border: 1px solid var(--accent-text-color);
-  border-radius: 4px;
-  height: 50px;
   text-align: center;
+  box-shadow: 0px 4px 4px 0px #00000026;
+
+  transition: background-color var(--time-animation) var(--time-function),
+    border-color var(--time-animation) var(--time-function);
 }
 .order:hover,
 .order:focus {
-  background-color: var(--button-hover);
   border-color: transparent;
+  background-color: var(--button-hover);
 }
 .section .title {
-  color: var(--main-title-text-color);
   margin-top: 0;
   margin-bottom: 10px;
+
+  color: var(--main-title-text-color);
 }
 .hide {
-        /* Удаляем элемент из потока документа */
-      position: absolute;
-      /* Временное решение для неверно произносимого, размазанного текста */
-      white-space: nowrap;
-      /* Устанавливаем минимально возможный размер (некоторые скринридеры игнорируют элементы с нулевой высотой и шириной) */
-      width: 1px;
-      height: 1px;
-      /* Скрываем вылезающий за границы контент */
-      overflow: hidden;
-      /* Сбрасываем любые свойства, которые могут повлиять на размер элемента */
-      border: 0;
-      padding: 0;
-      /* Вырезаем ту часть контента, которая должна отображаться. */
-      /* Устаревшее свойство clip для старых браузеров */
-      clip: rect(0 0 0 0);
-      /* clip-path для новых браузеров. inset(50%) определяет область вставки, которая позволит контенту исчезнуть.  */
-      clip-path: inset(50%);
-      /* Похоже, никто до конца не понимает, почему тут margin: -1px. Кроме того, это приводит к проблемам (читай: https://github.com/h5bp/html5-boilerplate/issues/1985). */
-      margin: -1px;
-    }
+  /* Удаляем элемент из потока документа */
+  position: absolute;
+  /* Временное решение для неверно произносимого, размазанного текста */
+  white-space: nowrap;
+  /* Устанавливаем минимально возможный размер (некоторые скринридеры игнорируют элементы с нулевой высотой и шириной) */
+  width: 1px;
+  height: 1px;
+  /* Скрываем вылезающий за границы контент */
+  overflow: hidden;
+  /* Сбрасываем любые свойства, которые могут повлиять на размер элемента */
+  border: 0;
+  padding: 0;
+  /* Вырезаем ту часть контента, которая должна отображаться. */
+  /* Устаревшее свойство clip для старых браузеров */
+  clip: rect(0 0 0 0);
+  /* clip-path для новых браузеров. inset(50%) определяет область вставки, которая позволит контенту исчезнуть.  */
+  clip-path: inset(50%);
+  /* Похоже, никто до конца не понимает, почему тут margin: -1px. Кроме того, это приводит к проблемам (читай: https://github.com/h5bp/html5-boilerplate/issues/1985). */
+  margin: -1px;
+}
 .feature-list {
+  display: flex;
   margin-bottom: 0;
   margin-top: 0;
   padding-left: 0;
-  display: flex;
 }
 .feature-icon {
   display: flex;
   width: 270px;
   height: 120px;
-  border-radius: 4px;
-  background-color: var(--button-background);
   margin-bottom: 30px;
+  border-radius: 4px;
+
   justify-content: center;
   align-items: center;
+
+  background-color: var(--button-background);
 }
 .feature-list-item,
 .team-list-item {
-  flex-basis: calc((100% -90px)/4);
+  flex-basis: calc((100% -90px) / 4);
   margin-right: 30px;
 }
 .feature-list-item:last-child,
@@ -224,8 +245,9 @@ header {
   margin-right: 0;
 }
 .team-list-item {
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .feature .title {
   font-weight: 700;
@@ -233,13 +255,13 @@ header {
   line-height: 1.14;
   text-transform: uppercase;
 }
-.feature p{
-  line-height: 1.71;
+.feature p {
   margin-top: 0;
   margin-bottom: 0;
+  line-height: 1.71;
 }
 .team {
-background-color: var(--button-background);
+  background-color: var(--button-background);
 }
 .team-list-item {
   background-color: var(--main-background-color);
@@ -248,63 +270,75 @@ background-color: var(--button-background);
   padding-top: 0;
 }
 .title.works {
+  margin-bottom: 50px;
+
+  text-align: center;
+
   font-size: 36px;
   line-height: 1.17;
-  text-align: center;
-  margin-bottom: 50px;
 }
 .team-member {
   padding-bottom: 30px;
   padding-top: 30px;
 }
 .team h3 {
+  text-align: center;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
-  text-align: center;
 }
 .team p {
-  font-size: 16px;
-  line-height: 1.19;
-  text-align: center;
   margin-top: 0;
   margin-bottom: 16px;
+
+  text-align: center;
+
+  font-size: 16px;
+  line-height: 1.19;
 }
 .list {
+  display: flex;
+
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
-  display: flex;
 }
 .title-list {
-  flex-basis: calc((100% -60px)/3);
+  flex-basis: calc((100% -60px) / 3);
   margin-right: 30px;
 }
 .social-icon {
-  padding: 0;
   display: flex;
-  justify-content: center;
+  padding: 0;
+
   margin-bottom: 0;
   margin-top: 0;
 
+  justify-content: center;
 }
 .social-icon-link {
   display: flex;
   width: 44px;
   height: 44px;
   border-radius: 50%;
+
   justify-content: center;
   align-items: center;
+
+  transition: background-color var(--time-animation) var(--time-function);
 }
 .social-icon li + li {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 .social-icon-list {
   fill: var(--icon-color);
+
+  transition: fill var(--time-animation) var(--time-function);
 }
 .social-icon-link:hover,
-.social-icon-link:focus
-{ background-color: var(--accent-text-color);
+.social-icon-link:focus {
+  background-color: var(--accent-text-color);
 }
 .social-icon-link:hover .social-icon-list,
 .social-icon-link:focus .social-icon-list {
@@ -319,16 +353,24 @@ background-color: var(--button-background);
   height: 92px;
   border: 1px solid var(--icon-color);
   border-radius: 4px;
+
   justify-content: center;
   align-items: center;
+
+  transition: border-color var(--time-animation) var(--time-function),
+    box-shadow var(--time-animation) var(--time-function);
 }
 .clients li + li {
   margin-left: 30px;
 }
 .client-list {
   display: flex;
+
   justify-content: center;
+
   fill: var(--icon-color);
+
+  transition: fill var(--time-animation) var(--time-function);
 }
 .client-link:hover,
 .client-link:focus {
@@ -336,25 +378,27 @@ background-color: var(--button-background);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .client-link:hover .client-list,
-.client-link:focus .client-list{
+.client-link:focus .client-list {
   fill: var(--accent-text-color);
 }
 
 /* Стили футера */
 footer {
-  background-color: var(--hero-background-color);
   padding-top: 60px;
   padding-bottom: 60px;
+
+  background-color: var(--hero-background-color);
 }
 .footer-logo {
   color: var(--additional-text-color);
 }
 .address {
+  margin-top: 20px;
+  margin-bottom: 0;
+
   color: var(--additional-text-color);
   font-style: normal;
   line-height: 1.71;
-  margin-top: 20px;
-  margin-bottom: 0;
 }
 .footer-address a {
   color: var(--adress-text-color);
@@ -362,7 +406,7 @@ footer {
   line-height: 1.71;
 }
 .footer-address li {
-margin-top: 9px;
+  margin-top: 9px;
 }
 .footer-address {
   margin-top: 0;
@@ -376,13 +420,14 @@ margin-top: 9px;
   margin-right: 70px;
 }
 .invitation h2 {
+  margin-bottom: 20px;
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--additional-text-color);
-  margin-bottom: 20px;
 }
 .invitation-list {
   margin-right: 10px;
@@ -397,15 +442,15 @@ margin-top: 9px;
   fill: var(--additional-text-color);
 }
 
-
 /* Стили Портфолио */
 .section.examples {
   padding-top: 94px;
   padding-bottom: 94px;
 }
 .examples-button {
-  justify-content: center;
   margin-bottom: 50px;
+
+  justify-content: center;
 }
 .examples-list {
   margin-right: 8px;
@@ -414,66 +459,77 @@ margin-top: 9px;
   margin-right: 0;
 }
 .button {
-  color: var(--main-title-text-color);
-  background-color: var(--button-background);
+  padding: 6px 22px;
   border: none;
+  border-radius: 4px;
+
   cursor: pointer;
+  text-align: center;
+
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: inherit;
-  text-align: center;
-  padding: 6px 22px;
-  border-radius: 4px;
+  color: var(--main-title-text-color);
+  background-color: var(--button-background);
+
+  transition: color var(--time-animation) var(--time-function),
+    background-color var(--time-animation) var(--time-function),
+    box-shadow var(--time-animation) var(--time-function);
 }
 .button:focus,
 .button:hover {
   color: var(--additional-text-color);
   background-color: var(--accent-text-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .portfolio {
   flex-wrap: wrap;
- }
-
+}
 .portfolio-list {
-
   margin-right: 30px;
   margin-bottom: 30px;
 }
 .portfolio-list:nth-child(3n) {
   margin-right: 0;
 }
-
-.portfolio-list:nth-last-child(-n+3) {
+.portfolio-list:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
 .examples .title {
+  margin-bottom: 4px;
+
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  margin-bottom: 4px;
 }
 .examples p {
-  font-size: 16px;
-  line-height: 1.88;
   margin-top: 0;
   margin-bottom: 0;
+
+  font-size: 16px;
+  line-height: 1.88;
 }
 .portfolio-list img {
   display: block;
 }
 .border-box {
   display: block;
-  border: 1px solid #EEEEEE;
-  border-top: transparent;
   padding: 20px 24px;
+  border: 1px solid #eeeeee;
+  border-top: transparent;
+}
+.portfolio-list a {
+  transition: border-top var(--time-animation) var(--time-function),
+    box-shadow var(--time-animation) var(--time-function);
 }
 .portfolio-list a:hover,
 .portfolio-list a:focus {
-  border-top: #EEEEEE;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  border-top: #eeeeee;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .portfolio-list-box {
   display: block;
